@@ -19,6 +19,16 @@ use PDF;
 
 class AdminController extends Controller
 {
+
+    public function CustomerList()
+    {
+        return view ('admin.customerlist');
+    }
+
+
+
+
+
     public function AdminDashboard()
     {
         return view('admin.index');
