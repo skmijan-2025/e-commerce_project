@@ -29,7 +29,7 @@
             </li>
 
             <li class="nav-item mt-1">
-                <a href=""
+                <a href="{{route('product.categories')}}"
                     class="nav-link">
                     <i class="link-icon" data-feather="layers"></i>
                     <span class="link-title">Categories</span>
