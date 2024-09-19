@@ -20,24 +20,28 @@ use PDF;
 class AdminController extends Controller
 {
 
-    public function CustomerList()
-    {
-        return view ('admin.customerlist');
-    }
 
-   public function ProductPage()
+   public function CategoryPage()
    {
-    return view ('admin.category.product_category');
+    $categories = Category::all();
+    return view ('admin.category.product_category', compact('categories'));
    }
    
-   public function AddProduct()
+   public function AdminAddCategory()
    {
+    return view ('admin.category.add_product_category');
+   }
+
+   public function EditCategory()
+   {
+   
     return view ('admin.category.add_product_category');
    }
 
    public function AdminProduct()
    {
-    return view ('admin.product.admin_product');
+    $categories = Category::all();
+    return view ('admin.product.admin_product', compact('categories'));
    }
 
    public function EditProduct()
@@ -45,6 +49,38 @@ class AdminController extends Controller
     return view ('admin.product.admin_edit_product');
    }
 
+   public function AddProduct()
+   {
+    return view ('admin.product.admin_add_product');
+   }
+
+
+
+   public function AdminCategoriesStore (Request $request)
+
+   {
+    $validatedInput = $request->validate([
+        'photo' => 'nullable|image|mimes:jpeg,png,gif,webp|max:2048',
+        'category_name' => 'required|string|max:255',
+    ]);
+
+    if ($request->hasfile('photo')){
+        $photo = $request->file('photo');
+        $photoName = date('YmdHi') . $photo->getClientsOriginlName();
+        $photo->move(public_path('upload/admin_images')). $photoName;
+        $validatedInput['photo'] = $photoName;
+    }
+
+    Category::create($validatedInput);
+
+    $notification = array( 
+    'message' => 'Product Category added successfully.',
+    'alert-type' => 'success'
+);
+
+    return redirect()->route('admin.category.product_category')->with($notification);
+   
+   }
 
 
 

@@ -5,7 +5,7 @@
 
 <nav class="page-breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('product.page')}}">Product Categories</a></li>
+        <li class="breadcrumb-item"><a href="">Product Categories</a></li>
         <li class="breadcrumb-item active" aria-current="page">Product Categories List</li>
     </ol>
 </nav>

@@ -19,7 +19,7 @@
                     <a href="" class="btn btn-primary"><i class="fas fa-plus"></i>Add Product</a>
                 </div>
 
-                <!-- Product Categories
+                Product Categories
 
                 <div class="mb-4">
                     <h6 class="card-title">Product Categories</h6>
@@ -33,7 +33,7 @@
                     </div>
                 </div>
 
-            Product Table -->
+            Product Table
 
             <div class="table-responsive">
                 <table id="dataTableExample" class="table table-hover text-center">
@@ -48,28 +48,9 @@
                               <th class="text-center">Action</th>  
                             </tr>
                     </thead>
-                    <!-- <tbody>
-                        @foreach ($products as $product)
-                        <tr>
-                            <td class="text-center">{{ $loop->iteration }}</td>
-                            <td class="text-center">
-                                <img src="" alt="Product Image" style="width: 50px; height: 50px">
-                            </td>
-                            <td class="text-center">{{ $product->name }}</td>
-                            <td class="text-center">{{ $product->category->category_name }}</td>
-                            <td class="text-center">{{ $product->price }}</td>
-                            <td class="text-center">{{ $product->stock }}</td>
-                            <td class="text-center">
-                                <a href="" class="btn btn-info btn-sm"><i class="fas fa-edit"></i>Edit</a>
-                                <form action="" class="d-inline-block" method="post" onsubmit="return confirm('Are you sure?')">
-                                    @csrf 
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i>Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody> -->
+                    <tbody>
+
+                    </tbody>
                 </table>
             </div>
             <!-- End of product table -->

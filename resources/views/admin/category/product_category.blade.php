@@ -14,7 +14,7 @@
         <div class="card-body">
             <div class="d-flex justify-content-between allign-items-center mb-4">
                 <h6 class="card-title">Product Category List</h6>
-                <a href="{{route('add.product')}}" class="btn btn-primary">Add Product Category</a>
+                <a href="{{route ('')}}" class="btn btn-primary">Add Product Category</a>
             </div>
 
         <div class="table-responsive">
@@ -27,7 +27,7 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <!-- <tbody>
+                <tbody>
                     @foreach ($categories as $category)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
@@ -45,7 +45,7 @@
                         </td>
                     </tr>
                     @endforeach
-                </tbody> -->
+                </tbody>
             </table>
         </div>
 

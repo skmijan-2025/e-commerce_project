@@ -34,10 +34,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/Profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
-    Route::get('/product/categories/page', [AdminController::class, 'ProductPage'])->name('product.page');
-    Route::get('/add/product', [AdminController::class, 'AddProduct'])->name('add.product');
-    Route::get('/product/list', [AdminController::class, 'AdminProduct'])->name('product.list');
-    Route::get('/product/edit', [AdminController::class, 'EditProduct'])->name('edit.product');
+    Route::get('/product/categories/page', [AdminController::class, 'CategoryPage'])->name('category.page');
+    Route::get('/add/product/category', [AdminController::class, 'AdminAddCategory'])->name('add.category');
+    Route::get('/edit/product/category', [AdminController::class, 'EditCategory'])->name('edit.category');
+    Route::get('/admin/product', [AdminController::class, 'AdminProduct'])->name('admin.product.category');
+    Route::get('/admin/add/product', [AdminController::class, 'AddProduct'])->name('admin.add.product');
+    Route::get('/admin/edit/product', [AdminController::class, 'EditProduct'])->name('admin.edit.product');
+
+    Route::post('/admin/product/store', [AdminController::class, 'AdminCategoriesStore'])->name('admin.product.store');
 
 });
 
