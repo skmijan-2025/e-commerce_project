@@ -1,13 +1,12 @@
 @extends('admin.admin_dashboard')
-
 @section('admin')
 
 <div class="page-content">
-    
+
 <nav class="page-breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{route('product.categories')}}">Product Categories</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Add Product Categories</li>
+        <li class="breadcrumb-item"><a href="{{route('product.page')}}">Product Categories</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Product Categories List</li>
     </ol>
 </nav>
 
@@ -34,10 +33,7 @@
     </div>
 </div>
 
-
-
 </div>
-
 
 
 

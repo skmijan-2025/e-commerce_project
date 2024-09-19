@@ -21,7 +21,7 @@
             </li>
 
             <li class="nav-item mt-1">
-                <a href="{{ route('customer.list') }}"
+                <a href=""
                     class="nav-link">
                     <i class="link-icon" data-feather="user"></i>
                     <span class="link-title">Customers</span>
@@ -29,7 +29,7 @@
             </li>
 
             <li class="nav-item mt-1">
-                <a href="{{route('product.categories')}}"
+                <a href="{{route('product.page')}}"
                     class="nav-link">
                     <i class="link-icon" data-feather="layers"></i>
                     <span class="link-title">Categories</span>
@@ -38,7 +38,7 @@
 
 
             <li class="nav-item mt-1">
-                <a href=""
+                <a href="{{route('product.list')}}"
                     class="nav-link">
                     <i class="link-icon" data-feather="shopping-bag"></i>
                     <span class="link-title">Products</span>

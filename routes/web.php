@@ -34,9 +34,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/Profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
-    Route::get('/customer/list', [AdminController::class, 'CustomerList'])->name('customer.list');
-    Route::get('/product/categories', [AdminController::class, 'ProductCategory'])->name('product.categories');
-    Route::get('/add/product', [AdminController::class, 'AddProduct'])->name('add.products');
+    Route::get('/product/categories/page', [AdminController::class, 'ProductPage'])->name('product.page');
+    Route::get('/add/product', [AdminController::class, 'AddProduct'])->name('add.product');
+    Route::get('/product/list', [AdminController::class, 'AdminProduct'])->name('product.list');
+    Route::get('/product/edit', [AdminController::class, 'EditProduct'])->name('edit.product');
+
 });
 
 
