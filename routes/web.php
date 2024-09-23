@@ -34,14 +34,31 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/admin/Profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
+
+
+
+    //Admin Category//
+    
     Route::get('/product/categories/page', [AdminController::class, 'CategoryPage'])->name('category.page');
     Route::get('/add/product/category', [AdminController::class, 'AdminAddCategory'])->name('add.category');
-    Route::get('/edit/product/category', [AdminController::class, 'EditCategory'])->name('edit.category');
-    Route::get('/admin/product', [AdminController::class, 'AdminProduct'])->name('admin.product.category');
-    Route::get('/admin/add/product', [AdminController::class, 'AddProduct'])->name('admin.add.product');
-    Route::get('/admin/edit/product', [AdminController::class, 'EditProduct'])->name('admin.edit.product');
+    Route::post('/admin/categories-store', [AdminController::class, 'AdminCategoriesStore'])->name('admin.categories.store');
+    Route::get('/admin/categories/edit{id}', [AdminController::class, 'AdminEditCategory'])->name('admin.edit.category');
+    Route::put('/admin/categories/update{id}', [AdminController::class, 'AdminUpdateCategory'])->name('admin.update.category');
+    Route::delete('/admin/categories/delete{id}', [AdminController::class, 'AdminDeleteCategory'])->name('admin.delete.category');
 
-    Route::post('/admin/product/store', [AdminController::class, 'AdminCategoriesStore'])->name('admin.product.store');
+
+    //Admin Product
+    
+    
+    Route::get('/admin/product', [AdminController::class, 'AdminProduct'])->name('admin.product');
+    Route::get('/admin/add/product', [AdminController::class, 'AddProduct'])->name('admin.add.product');
+    Route::post('/admin/product/store', [AdminController::class,'AdminProductStore'])->name('admin.product.store');
+    Route::get('admin/product/{id}', [AdminController::class, 'AdminProductView'])->name('admin.product.view');
+    Route::get('/admin/edit/product{id}', [AdminController::class, 'EditProduct'])->name('admin.edit.product');
+    Route::put('admin/product/update/{id}', [AdminController::class, 'AdminUpdateProduct'])->name('admin.update.product');
+    Route::delete('/admin/product/delete/{id}', [AdminController::class, 'AdminDeleteProduct'])->name('admin.delete.product');
+
+    
 
 });
 

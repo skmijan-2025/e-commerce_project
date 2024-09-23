@@ -33,28 +33,19 @@
                         <img src="" alt="profile" class="wd-150 rounded" height="150px">
                     </div>
 
-                    <div class="form-group mb-3">
-                        <label for="category" class="form-label">Product Category</label>
-                        <select name="category_id" id="category" class="form-control">
-                            <option value=""selected disabled>-- Select Product Category --</option>
-                            @foreach($categories as $category)
-                            <option value="{{ $category->id }}" {{ $product->category_id == $category->id ? 'selected' : '' }}>{{ $category->category_name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
 
                     <div class="mb-3">
                         <label for="" class="form-label">Product Price</label>
-                        <input type="text" class="form-control" name="price" id="price" placeholder="price" value="{{ $product->price }}">
+                        <input type="text" class="form-control" name="price" id="price" placeholder="price" value="">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Product Stock</label>
-                        <input type="text" class="form-control" name="stock" id="stock" placeholder="Stock" value="{{ $product->stock }}">
+                        <input type="text" class="form-control" name="stock" id="stock" placeholder="Stock" value="">
                     </div>
 
                     <div class="mb-3">
                         <label for="" class="form-label">Product Description</label>
-                        <textarea name="description" id="description" class="form-control" rows="8" placeholder="Enter a detailed description of your product...">{{ $product->description }}</textarea>
+                        <textarea name="description" id="description" class="form-control" rows="8" placeholder="Enter a detailed description of your product..."></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary me-2">Update Product</button>

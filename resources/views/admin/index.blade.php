@@ -37,7 +37,7 @@
               </div>
               <div class="row">
                 <div class="col-6 col-md-12 col-xl-5">
-                  <h3 class="mb-2">3,897</h3>
+                  <h3 class="mb-2">3897</h3>
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@
               </div>
               <div class="row">
                 <div class="col-6 col-md-12 col-xl-5">
-                  <h3 class="mb-2">3,897</h3>
+                  <h3 class="mb-2">3897</h3>
                 </div>
               </div>
             </div>
@@ -79,7 +79,7 @@
               </div>
               <div class="row">
                 <div class="col-6 col-md-12 col-xl-5">
-                  <h3 class="mb-2">89.87</h3>
+                  <h3 class="mb-2">89.8</h3>
                 </div>
               </div>
             </div>

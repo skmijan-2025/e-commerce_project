@@ -14,7 +14,7 @@
         <div class="card-body">
             <div class="d-flex justify-content-between allign-items-center mb-4">
                 <h6 class="card-title">Product Category List</h6>
-                <a href="{{route ('')}}" class="btn btn-primary">Add Product Category</a>
+                <a href="{{Route('add.category')}}" class="btn btn-primary">Add Product Category</a>
             </div>
 
         <div class="table-responsive">
@@ -28,23 +28,32 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($categories as $category)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td class="text-center">
-                            <img src="" alt="Category Image" style="width:50px; height:50px;">
-                        </td>
-                        <td>{{ $category->category_name }}</td>
-                        <td>
-                            <a href="" class="btn btn-info btn-sm">Edit</a>
-                            <form action="" method="post" style="display: inline;">
+                            
+                        @foreach ($categories as $category)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td class="text-center">
+                            <img src="{{ asset('upload/admin_images/' . $category->photo) }}" alt="Category Image"
+                            style="width: 50px; height: 50px;">
+
+                                
+                            </td>
+                            <td>{{ $category->category_name }}</td>
+                            <td>
+                                <a href="{{route ('admin.edit.category', $category->id) }}"
+                                class="btn btn-info btn-sm">Edit</a>
+                                <form action="{{ route('admin.delete.category', $category->id) }}" method="POST"
+                                style="display: inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
+                                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+
+
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+
                 </tbody>
             </table>
         </div>
