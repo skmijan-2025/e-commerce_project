@@ -62,13 +62,13 @@
                                 <td class="text-center">{{ $product->price }}</td>
                                 <td class="text-center">{{ $product->stock }}</td>
                                 <td class="text-center">
-                                    <a href="{{ route('admin.edit.product', $product->id) }}" class="btn btn-info btn-sm">
-                                        <i class="fas fa-edit"></i>Edit</a>
+                                    <a href="{{ route('admin.view.product', $product->id) }}" class="btn btn-primary btn-sm">View</a>
+                                    <a href="{{ route('admin.edit.product', $product->id) }}" class="btn btn-info btn-sm">Edit</a>
                                         <form action="{{ route('admin.delete.product', $product->id) }}" method="POST" class="d-inline-block"
                                         onsubmit="return confirm('Are you sure?')">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt">Delete</i></button>
+                                        <button class="btn btn-danger btn-sm" type="submit">Delete</button>
                                     </form>
                                 </td>
                             </tr>

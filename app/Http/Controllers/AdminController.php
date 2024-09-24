@@ -219,10 +219,10 @@ class AdminController extends Controller
 
     Product::create($validatedInput);
 
-    return redirect()->back()->with([
-        'message' => 'Product Added Successfully',
+    return redirect()->route('admin.product')->with([
+        'message' => 'Product added successfully.',
         'alert-type' => 'success'
-    ]);
+        ]);
 
     }
 
@@ -242,7 +242,7 @@ class AdminController extends Controller
 
     //admin_edit_product start//
 
-   public function EditProduct()
+   public function EditProduct($id)
    {
     $categories = Category::all();
     $product = Product::findOrFail($id);
@@ -276,10 +276,10 @@ class AdminController extends Controller
     $product = Product::findOrFail($id);
     $product->update($validatedInput);
 
-    return redirect()->back()->with([
-        'message' => 'Product Updated Successfully',
+    return redirect()->route('admin.product')->with([
+        'message' => 'Product updated successfully.',
         'alert-type' => 'success'
-    ]);
+        ]);
 
    }
 
@@ -296,10 +296,10 @@ class AdminController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
 
-        return redirect()->back()->with([
-            'message' => 'Product Deleted Successfully',
+        return redirect()->route('admin.product')->with([
+            'message' => 'Product deleted successfully.',
             'alert-type' => 'success'
-        ]);    
+            ]);    
 
    }
 
@@ -311,6 +311,13 @@ class AdminController extends Controller
    {
     $categories = Category::all();
     return view ('admin.product.admin_add_product', compact('categories'));
+   }
+
+   public function ViewProduct($id)
+   {
+        $product = Product::findOrFail($id);
+
+        return view ('admin.product.admin_product_single', compact('product'));
    }
 
 

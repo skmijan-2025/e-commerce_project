@@ -49,7 +49,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     //Admin Product
     
-    
+    Route::get('/admin/product/view/{id}', [AdminController::class, 'ViewProduct'])->name('admin.view.product');
     Route::get('/admin/product', [AdminController::class, 'AdminProduct'])->name('admin.product');
     Route::get('/admin/add/product', [AdminController::class, 'AddProduct'])->name('admin.add.product');
     Route::post('/admin/product/store', [AdminController::class,'AdminProductStore'])->name('admin.product.store');
